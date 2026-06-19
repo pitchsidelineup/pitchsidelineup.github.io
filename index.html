@@ -108,8 +108,19 @@
 
         /* HERO */
         .hero {
-            padding: 6rem 0 4rem;
+            padding: 3rem 0 4rem;
             text-align: center;
+        }
+
+        .hero-banner {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 0 auto 2.5rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
         }
 
         .hero-badge {
@@ -532,9 +543,7 @@
         </nav>
 
         <section class="hero">
-            <img src="logo.png" alt="Pitchside Lineup" class="hero-logo">
-            <div class="hero-badge">Built for the Sideline</div>
-            <h1>Your Matchday<br>Companion for<br><em>Gaelic Games</em></h1>
+            <img src="banner.jpg" alt="Pitchside Lineup — Team Management, Match Prep, Tactics, Performance" class="hero-banner">
             <p class="hero-sub">
                 Build your lineup, track live scores and stats, and share to WhatsApp or X — all from your phone, no internet needed.
                 Built for coaches who want to spend less time on clipboards and more time on the pitch.
