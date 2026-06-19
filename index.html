@@ -5,17 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pitchside Lineup — The Sideline App for Gaelic Games Coaches</title>
     <meta name="description" content="Build your lineup, track match stats, and share with your team. Built for Gaelic football, hurling, and camogie coaches.">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="canonical" href="https://pitchsidelineup.com/">
+    <meta name="theme-color" content="#0d2230">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pitchside Lineup">
+    <meta property="og:title" content="Pitchside Lineup — The Sideline App for Gaelic Games Coaches">
+    <meta property="og:description" content="Build your lineup, track live scores and stats, and share with your team. Built for Gaelic football, hurling, and camogie coaches.">
+    <meta property="og:url" content="https://pitchsidelineup.com/">
+    <meta property="og:image" content="https://pitchsidelineup.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Pitchside Lineup logo">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pitchside Lineup — The Sideline App for Gaelic Games Coaches">
+    <meta name="twitter:description" content="Build your lineup, track live scores and stats, and share with your team. Built for Gaelic football, hurling, and camogie coaches.">
+    <meta name="twitter:image" content="https://pitchsidelineup.com/og-image.png">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
     
         :root {
-            --green-deep: #0a1f0a;
-            --green-dark: #14501e;
-            --green-mid: #1a6b28;
-            --green-bright: #2e8b3e;
-            --gold: #c9a84c;
-            --gold-light: #dfc06a;
+            --ink: #0d2230;
+            --accent: #238768;
+            --accent-light: #2fa37f;
             --white: #f5f5f0;
             --grey: #a0a090;
         }
@@ -23,7 +42,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: var(--green-deep);
+            background: var(--ink);
             color: var(--white);
             font-family: 'Source Sans 3', sans-serif;
             overflow-x: hidden;
@@ -42,7 +61,7 @@
                     rgba(255,255,255,0.015) 40px,
                     rgba(255,255,255,0.015) 80px
                 ),
-                radial-gradient(ellipse at 50% 0%, rgba(46,139,62,0.3) 0%, transparent 70%);
+                radial-gradient(ellipse at 50% 0%, rgba(35,135,104,0.3) 0%, transparent 70%);
             pointer-events: none;
             z-index: 0;
         }
@@ -73,7 +92,7 @@
             text-decoration: none;
         }
 
-        .nav-brand span { color: var(--gold); }
+        .nav-brand span { color: var(--accent); }
 
         .nav-links a {
             color: var(--grey);
@@ -96,8 +115,8 @@
         .hero-badge {
             display: table;
             margin: 0 auto 2rem;
-            border: 1px solid var(--gold);
-            color: var(--gold);
+            border: 1px solid var(--accent);
+            color: var(--accent);
             font-family: 'Oswald', sans-serif;
             font-size: 0.7rem;
             font-weight: 500;
@@ -114,7 +133,6 @@
             width: 180px;
             height: auto;
             margin: 0 auto 2rem;
-            border-radius: 12px;
             opacity: 0;
             animation: fadeUp 0.6s ease forwards;
         }
@@ -133,7 +151,7 @@
 
         .hero h1 em {
             font-style: normal;
-            color: var(--gold);
+            color: var(--accent);
         }
 
         .hero-sub {
@@ -172,12 +190,12 @@
         }
 
         .btn-primary {
-            background: var(--gold);
-            color: var(--green-deep);
+            background: var(--accent);
+            color: var(--white);
         }
 
         .btn-primary:hover {
-            background: var(--gold-light);
+            background: var(--accent-light);
             transform: translateY(-1px);
         }
 
@@ -266,10 +284,62 @@
             font-weight: 300;
         }
 
+        /* SCREENSHOTS */
+        .screenshots {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .screenshots h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 2.5rem;
+        }
+
+        .screenshots h2 span { color: var(--accent); }
+
+        .shots-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .shot {
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        .shot:nth-child(1) { animation-delay: 0.1s; }
+        .shot:nth-child(2) { animation-delay: 0.2s; }
+        .shot:nth-child(3) { animation-delay: 0.3s; }
+
+        .shot img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.08);
+            display: block;
+        }
+
+        .shot p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--grey);
+            margin-top: 0.85rem;
+        }
+
         /* DIVIDER */
         .divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(35,135,104,0.4), transparent);
             margin: 2rem 0;
         }
 
@@ -309,7 +379,7 @@
         }
 
         .sports-list span.active {
-            color: var(--gold);
+            color: var(--accent);
             opacity: 1;
         }
 
@@ -338,7 +408,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .footer-brand span { color: var(--gold); }
+        .footer-brand span { color: var(--accent); }
 
         .footer-tagline {
             font-size: 0.8rem;
@@ -391,6 +461,8 @@
             .sports-list span { font-size: 1.1rem; }
             .footer-content { flex-direction: column; align-items: center; text-align: center; }
             .footer-links { flex-direction: column; gap: 0.75rem; align-items: center; }
+            .shots-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 380px; }
+            .shot:nth-child(3) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -528,6 +600,26 @@
                     <div class="feature-icon">📡</div>
                     <h3>Fully Offline</h3>
                     <p>No internet, no accounts, no data collected. Everything runs on your device. Built for the sideline, not the server room.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="screenshots">
+            <h2>See It <span>In Action</span></h2>
+            <div class="shots-grid">
+                <div class="shot">
+                    <img src="screenshot-1.png" alt="Match Ready home screen" loading="lazy">
+                    <p>Match Ready</p>
+                </div>
+                <div class="shot">
+                    <img src="screenshot-2.png" alt="Tactics Board with a play" loading="lazy">
+                    <p>Tactics Board</p>
+                </div>
+                <div class="shot">
+                    <img src="screenshot-3.png" alt="Match day stats" loading="lazy">
+                    <p>Match Day</p>
                 </div>
             </div>
         </section>
