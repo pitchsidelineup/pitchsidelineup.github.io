@@ -358,6 +358,63 @@
             border-color: var(--accent-light);
         }
 
+        .demo-shots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 520px;
+            margin: 3rem auto 0;
+        }
+
+        .demo-thumb {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .demo-thumb img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .play-badge {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13,34,48,0.7);
+            border: 2px solid var(--white);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.3rem;
+            padding-left: 4px;
+        }
+
+        .demo-shot p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--grey);
+            margin-top: 0.85rem;
+            text-align: center;
+        }
+
+        .demo-note {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--grey);
+        }
+
         /* DIVIDER */
         .divider {
             height: 1px;
@@ -650,6 +707,24 @@
                 </div>
             </div>
             <p class="demos-link">See it in action with live demos on <a href="https://www.youtube.com/channel/UCkFAwhlO3Jrg45sPHIZPSSw" target="_blank" rel="noopener">our YouTube channel</a>.</p>
+
+            <div class="demo-shots">
+                <div class="demo-shot">
+                    <div class="demo-thumb">
+                        <img src="screenshot-lineup.png" alt="Lineup Builder" loading="lazy">
+                        <span class="play-badge">▶</span>
+                    </div>
+                    <p>Lineup Builder</p>
+                </div>
+                <div class="demo-shot">
+                    <div class="demo-thumb">
+                        <img src="screenshot-team.png" alt="Team Management" loading="lazy">
+                        <span class="play-badge">▶</span>
+                    </div>
+                    <p>Team Management</p>
+                </div>
+            </div>
+            <p class="demo-note">Video walkthroughs coming soon.</p>
         </section>
 
         <div class="divider"></div>
