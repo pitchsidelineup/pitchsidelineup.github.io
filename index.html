@@ -336,9 +336,30 @@
 
         .shot-thumb {
             position: relative;
+            display: block;
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        a.shot-thumb {
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        a.shot-thumb:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        a.shot-thumb .play-badge {
+            transition: background 0.2s, transform 0.2s;
+            transform: translate(-50%, -50%);
+        }
+
+        a.shot-thumb:hover .play-badge {
+            background: var(--accent);
+            transform: translate(-50%, -50%) scale(1.08);
         }
 
         .shot-thumb img {
@@ -661,10 +682,10 @@
                     <p>Match Day</p>
                 </div>
                 <div class="shot">
-                    <div class="shot-thumb">
+                    <a class="shot-thumb" href="https://youtu.be/aneZgcHLrSM" target="_blank" rel="noopener">
                         <img src="screenshot-2.png" alt="Tactics Board with a play" loading="lazy">
                         <span class="play-badge">▶</span>
-                    </div>
+                    </a>
                     <p>Tactics Board</p>
                 </div>
                 <div class="shot">
