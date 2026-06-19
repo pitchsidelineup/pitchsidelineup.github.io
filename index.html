@@ -319,61 +319,17 @@
         .shot:nth-child(1) { animation-delay: 0.1s; }
         .shot:nth-child(2) { animation-delay: 0.2s; }
         .shot:nth-child(3) { animation-delay: 0.3s; }
+        .shot:nth-child(4) { animation-delay: 0.4s; }
+        .shot:nth-child(5) { animation-delay: 0.5s; }
 
-        .shot img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.08);
-            display: block;
-        }
-
-        .shot p {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--grey);
-            margin-top: 0.85rem;
-        }
-
-        .demos-link {
-            margin-top: 2.5rem;
-            font-size: 1rem;
-            font-weight: 300;
-            color: var(--grey);
-        }
-
-        .demos-link a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(35,135,104,0.4);
-            transition: color 0.2s, border-color 0.2s;
-        }
-
-        .demos-link a:hover {
-            color: var(--accent-light);
-            border-color: var(--accent-light);
-        }
-
-        .demo-shots {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 520px;
-            margin: 3rem auto 0;
-        }
-
-        .demo-thumb {
+        .shot-thumb {
             position: relative;
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.08);
         }
 
-        .demo-thumb img {
+        .shot-thumb img {
             width: 100%;
             height: auto;
             display: block;
@@ -396,7 +352,7 @@
             padding-left: 4px;
         }
 
-        .demo-shot p {
+        .shot p {
             font-family: 'Oswald', sans-serif;
             font-size: 0.85rem;
             font-weight: 500;
@@ -404,15 +360,26 @@
             letter-spacing: 0.05em;
             color: var(--grey);
             margin-top: 0.85rem;
-            text-align: center;
         }
 
         .demo-note {
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
+            margin-top: 2.5rem;
+            font-size: 0.95rem;
             font-weight: 300;
-            font-style: italic;
             color: var(--grey);
+        }
+
+        .demo-note a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(35,135,104,0.4);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .demo-note a:hover {
+            color: var(--accent-light);
+            border-color: var(--accent-light);
         }
 
         /* DIVIDER */
@@ -541,7 +508,7 @@
             .footer-content { flex-direction: column; align-items: center; text-align: center; }
             .footer-links { flex-direction: column; gap: 0.75rem; align-items: center; }
             .shots-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 380px; }
-            .shot:nth-child(3) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
+            .shot:nth-child(5) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -694,37 +661,42 @@
             <h2>See It <span>In Action</span></h2>
             <div class="shots-grid">
                 <div class="shot">
-                    <img src="screenshot-1.png" alt="Match Ready home screen" loading="lazy">
+                    <div class="shot-thumb">
+                        <img src="screenshot-1.png" alt="Match Ready home screen" loading="lazy">
+                        <span class="play-badge">▶</span>
+                    </div>
                     <p>Match Ready</p>
                 </div>
                 <div class="shot">
-                    <img src="screenshot-2.png" alt="Tactics Board with a play" loading="lazy">
+                    <div class="shot-thumb">
+                        <img src="screenshot-2.png" alt="Tactics Board with a play" loading="lazy">
+                        <span class="play-badge">▶</span>
+                    </div>
                     <p>Tactics Board</p>
                 </div>
                 <div class="shot">
-                    <img src="screenshot-3.png" alt="Match day stats" loading="lazy">
+                    <div class="shot-thumb">
+                        <img src="screenshot-3.png" alt="Match day stats" loading="lazy">
+                        <span class="play-badge">▶</span>
+                    </div>
                     <p>Match Day</p>
                 </div>
-            </div>
-            <p class="demos-link">See it in action with live demos on <a href="https://www.youtube.com/channel/UCkFAwhlO3Jrg45sPHIZPSSw" target="_blank" rel="noopener">our YouTube channel</a>.</p>
-
-            <div class="demo-shots">
-                <div class="demo-shot">
-                    <div class="demo-thumb">
+                <div class="shot">
+                    <div class="shot-thumb">
                         <img src="screenshot-lineup.png" alt="Lineup Builder" loading="lazy">
                         <span class="play-badge">▶</span>
                     </div>
                     <p>Lineup Builder</p>
                 </div>
-                <div class="demo-shot">
-                    <div class="demo-thumb">
+                <div class="shot">
+                    <div class="shot-thumb">
                         <img src="screenshot-team.png" alt="Team Management" loading="lazy">
                         <span class="play-badge">▶</span>
                     </div>
                     <p>Team Management</p>
                 </div>
             </div>
-            <p class="demo-note">Video walkthroughs coming soon.</p>
+            <p class="demo-note">Video walkthroughs coming soon — see them on <a href="https://www.youtube.com/channel/UCkFAwhlO3Jrg45sPHIZPSSw" target="_blank" rel="noopener">our YouTube channel</a>.</p>
         </section>
 
         <div class="divider"></div>
